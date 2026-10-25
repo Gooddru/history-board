@@ -29,7 +29,6 @@
     overflow-x: hidden;
   }
 
-  /* Верхняя панель навигации */
   .toolbar {
     position: sticky;
     top: 0;
@@ -83,7 +82,6 @@
   .btn-cluster-2 { border-left: 4px solid var(--amber-border); }
   .btn-cluster-3 { border-left: 4px solid var(--red-border); }
 
-  /* Интерактивная доска */
   #view-board {
     position: relative;
     width: 100%;
@@ -109,7 +107,6 @@
     transform-origin: 0 0;
   }
 
-  /* Кластерные зоны */
   .cluster-zone {
     position: absolute;
     border-radius: 20px;
@@ -148,7 +145,6 @@
     font-weight: 500;
   }
 
-  /* Слой соединительных стрелок */
   #connections {
     position: absolute;
     top: 0;
@@ -159,7 +155,6 @@
     z-index: 2;
   }
 
-  /* Карточки организаций */
   .node-card {
     position: absolute;
     width: 330px;
@@ -268,7 +263,6 @@
     background: #eff6ff;
   }
 
-  /* Панель зума */
   .zoom-controls {
     position: absolute;
     bottom: 16px;
@@ -284,7 +278,6 @@
     align-items: center;
   }
 
-  /* Сетка карточек */
   #view-grid {
     display: none;
     padding: 24px;
@@ -307,7 +300,6 @@
     cursor: default;
   }
 
-  /* Таблица */
   #view-table {
     display: none;
     padding: 24px;
@@ -370,7 +362,6 @@
   tr:nth-child(even) td { background: #f8fafc; }
   tr:hover td { background: #eff6ff; }
 
-  /* Модальное окно */
   .modal-backdrop {
     display: none;
     position: fixed;
@@ -436,7 +427,6 @@
   </div>
 </div>
 
-<!-- ВИД 1: ИНТЕРАКТИВНАЯ ДОСКА -->
 <div id="view-board">
   <div id="canvas">
     <div class="cluster-zone zone-1">
@@ -479,14 +469,12 @@
   </div>
 </div>
 
-<!-- ВИД 2: СЕТКА КАРТОЧЕК -->
 <div id="view-grid">
   <h2 style="font-size:20px; margin-bottom:6px;">Все блоки схемы с иллюстрациями</h2>
   <p style="font-size:13px; color:#64748b;">Нажмите на кнопку внутри любой карточки, чтобы открыть полную программу по пунктам А–Г.</p>
   <div class="grid-container" id="grid-layer"></div>
 </div>
 
-<!-- ВИД 3: СВОДНАЯ ТАБЛИЦА -->
 <div id="view-table">
   <div class="table-controls">
     <div>
@@ -513,7 +501,6 @@
   </div>
 </div>
 
-<!-- Модальное окно -->
 <div class="modal-backdrop" id="modal" onclick="if(event.target===this) closeModal()">
   <div class="modal-box">
     <div class="modal-header">
@@ -525,7 +512,7 @@
 </div>
 
 <script>
-// Резервный аватар, если фото загрузится с ошибкой
+
 function getFallbackPhoto(title) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200"><rect width="400" height="200" fill="#1e293b"/><circle cx="200" cy="75" r="32" fill="#334155"/><path d="M140 160 C140 120, 260 120, 260 160 Z" fill="#334155"/><text x="200" y="180" text-anchor="middle" fill="#94a3b8" font-size="13" font-family="sans-serif">${title}</text></svg>`;
   return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);

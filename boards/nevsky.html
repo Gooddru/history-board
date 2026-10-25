@@ -39,13 +39,11 @@
 
     .portrait {
         width: 170px; height: 170px; border-radius: 50%;
-        background-color: #eee9dd; border: 6px solid #ffffff; box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center;
-        text-align: center; font-size: 13px; font-weight: bold; color: #8a7d71;
-        background-size: cover; background-position: center top; transition: 0.3s;
+        background-color: #eee9dd; border: 6px solid #cf9527; box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        background-image: url('images/alnevsk.jpg');
+        background-size: cover; background-position: center top;
         flex-shrink: 0;
     }
-    .portrait:hover { filter: brightness(0.9); transform: scale(1.03); border-color: #cf9527; }
 
     .policy-grid { display: flex; gap: 30px; margin-bottom: 50px; }
     .policy-col { flex: 1; background: #ffffff; padding: 25px 30px; border-radius: 8px; border: 1px solid #e3dec9; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
@@ -90,11 +88,7 @@
             <div class="quote">«Кто с мечом к нам войдёт, тот от меча и погибнет. На том стоит и стоять будет русская земля!»</div>
         </div>
         
-        <div class="portrait" id="portraitBox" onclick="document.getElementById('fileUpload').click()">
-            <span id="uploadText" style="font-size: 28px; margin-bottom: 5px;">🖼️</span>
-            <span id="uploadText2">Загрузить<br>портрет</span>
-            <input type="file" id="fileUpload" style="display:none" accept="image/*" onchange="loadPortrait(event)">
-        </div>
+        <div class="portrait"></div>
     </div>
 
     <div class="policy-grid">
@@ -207,24 +201,6 @@
     </div>
 
 </div>
-
-<script>
-    
-    function loadPortrait(event) {
-        const file = event.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const box = document.getElementById('portraitBox');
-                box.style.backgroundImage = `url(${e.target.result})`;
-                document.getElementById('uploadText').style.display = 'none';
-                document.getElementById('uploadText2').style.display = 'none';
-                box.style.border = '6px solid #cf9527'; 
-            }
-            reader.readAsDataURL(file);
-        }
-    }
-</script>
 
 </body>
 </html>
