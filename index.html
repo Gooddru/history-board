@@ -75,14 +75,14 @@
     background-position: center;
   }
   
+  .card-banner.nevsky { 
+    background-image: linear-gradient(to top, rgba(15,23,42,0.95), rgba(15,23,42,0.3)), url('images/backgrounds/nevsky_bg.jpg');
+  }
   .card-banner.romanovs { 
-    background-image: linear-gradient(to top, rgba(15,23,42,0.95), rgba(15,23,42,0.3)), url('images/romanov_bg.webp');
+    background-image: linear-gradient(to top, rgba(15,23,42,0.95), rgba(15,23,42,0.3)), url('images/backgrounds/romanovs_bg.webp');
   }
   .card-banner.decembrists { 
-    background-image: linear-gradient(to top, rgba(15,23,42,0.95), rgba(15,23,42,0.3)), url('images/decembrist_bg.jpg');
-  }
-  .card-banner.nevsky { 
-    background-image: linear-gradient(to top, rgba(15,23,42,0.95), rgba(15,23,42,0.3)), url('images/nevsky_bg.jpg');
+    background-image: linear-gradient(to top, rgba(15,23,42,0.95), rgba(15,23,42,0.3)), url('images/backgrounds/decembrists_bg.jpg');
   }
 
   .card-badge {
@@ -104,8 +104,8 @@
     font-size: 14px; font-weight: 700; color: var(--accent-blue);
     display: flex; align-items: center; gap: 6px;
   }
-  .board-card.decembrists .card-link-text { color: var(--accent-red); }
   .board-card.nevsky .card-link-text { color: var(--accent-gold); }
+  .board-card.decembrists .card-link-text { color: var(--accent-red); }
 
   footer {
     text-align: center; padding: 24px; color: var(--text-muted);
@@ -124,7 +124,21 @@
     <p class="subtitle">Нажмите на карточку, чтобы открыть детальную интерактивную доску по нужной теме.</p>
     
     <div class="boards-grid">
-      <a href="romanovs.html" class="board-card romanovs">
+      
+      <a href="boards/nevsky.html" class="board-card nevsky">
+        <div class="card-banner nevsky">
+          <span class="card-badge">XIII век</span>
+        </div>
+        <div class="card-content">
+          <div>
+            <h2 class="card-title">Доска: Александр Невский</h2>
+            <p class="card-desc">Инфографика, таймлайн жизни, противостояние крестоносцам на Западе и дипломатия с Ордой на Востоке.</p>
+          </div>
+          <div class="card-link-text">Открыть доску Невского →</div>
+        </div>
+      </a>
+
+      <a href="boards/romanovs.html" class="board-card romanovs">
         <div class="card-banner romanovs">
           <span class="card-badge">XVIII век</span>
         </div>
@@ -137,7 +151,7 @@
         </div>
       </a>
 
-      <a href="decembrists.html" class="board-card decembrists">
+      <a href="boards/decembrists.html" class="board-card decembrists">
         <div class="card-banner decembrists">
           <span class="card-badge">1810 — 1825 гг.</span>
         </div>
@@ -147,19 +161,6 @@
             <p class="card-desc">Общественные движения, тайные общества, программы Пестеля и Муравьёва, восстание на Сенатской площади.</p>
           </div>
           <div class="card-link-text">Открыть доску Декабристов →</div>
-        </div>
-      </a>
-
-      <a href="nevsky.html" class="board-card nevsky">
-        <div class="card-banner nevsky">
-          <span class="card-badge">XIII век</span>
-        </div>
-        <div class="card-content">
-          <div>
-            <h2 class="card-title">Доска: Александр Невский</h2>
-            <p class="card-desc">Инфографика, таймлайн жизни, противостояние крестоносцам на Западе и дипломатия с Ордой на Востоке.</p>
-          </div>
-          <div class="card-link-text">Открыть доску Невского →</div>
         </div>
       </a>
     </div>
